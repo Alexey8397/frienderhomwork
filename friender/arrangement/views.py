@@ -138,7 +138,7 @@ class PlaceListView(ListView):
     template_name = 'establishments.html'
     model = Establishments
     context_object_name = "establishments"
-    queryset = Establishments.objects.all()[:4]
+    queryset = Establishments.objects.all()[:8]
 
 
 class EstablishmentsCreateView(LoginRequiredMixin,CreateView):

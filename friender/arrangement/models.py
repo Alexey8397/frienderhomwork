@@ -1,7 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.core.signals import request_finished
-from django.db.models.signals import post_save,m2m_changed
+from django.db.models.signals import post_save, m2m_changed
 from django.dispatch import receiver
 
 STATUS = [
@@ -140,13 +140,13 @@ class UserRating(Rating):
         return str(self.rating)
 
 # @receiver(post_save, sender=Users)
-def user_created(sender, instance, **kwargs):
-    print('signal work')
-    print(sender)
-    print(instance)
-    print(instance.age)
-    hobby = Hobbies.objects.get(id=1)
-    instance.hobbies_set.add(hobby)
-
+# def user_created(sender, instance, **kwargs):
+#     print('signal work')
+#     print(sender)
+#     print(instance)
+#     print(instance.age)
+#     hobby = Hobbies.objects.get(id=1)
+#     instance.hobbies_set.add(hobby)
 #
-post_save.connect(receiver=user_created, sender=Users)
+# #
+# post_save.connect(receiver=user_created, sender=Users)
